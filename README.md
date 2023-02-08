@@ -10,4 +10,5 @@
    * tener instalado nest de forma global, comando `$npm i -g @nestjs/cli`
    * crear proyecto nuevo con el comando `$nest new project-name`
    * crear componentes o modulos completos `$nest g resource <nombre>`
+   **TypeORM**
  
