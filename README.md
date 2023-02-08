@@ -16,7 +16,6 @@
    * usar el modulo de TypeORM en el modulo principal ej:
    `import { Module } from '@nestjs/common';
     import { TypeOrmModule } from '@nestjs/typeorm';
-
     @Module({
       imports: [
         TypeOrmModule.forRoot({
