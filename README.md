@@ -7,5 +7,6 @@
 
 # Nest
    **Crear un proyecto nuevo**
-   * tener instalado nest de forma global, comandoo `$ npm i -g @nestjs/cli`
+   * tener instalado nest de forma global, comando `$npm i -g @nestjs/cli`
+   * crear proyecto nuevo con el comando `$nest new project-name`
  
