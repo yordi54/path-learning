@@ -12,4 +12,6 @@
    * crear componentes o modulos completos `$nest g resource <nombre>`
    
    **TypeORM**
+   * instalar packages `$yarn add @nestjs/typeorm typeorm pg`
+
  
