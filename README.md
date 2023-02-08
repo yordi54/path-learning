@@ -14,7 +14,7 @@
    **TypeORM**
    * instalar packages `$yarn add @nestjs/typeorm typeorm pg` ver [documentación](https://docs.nestjs.com/techniques/database#typeorm-integration)
    * importar y usar el modulo de TypeORM en el modulo principal ej:
-          ``` Title
+          ```Title
           TypeOrmModule.forRoot({
             type: mysql,
             host: localhost,
