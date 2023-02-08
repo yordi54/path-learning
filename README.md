@@ -14,21 +14,29 @@
    **TypeORM**
    * instalar packages `$yarn add @nestjs/typeorm typeorm pg` ver [documentación](https://docs.nestjs.com/techniques/database#typeorm-integration)
    * importar y usar el modulo de TypeORM en el modulo principal ej:
-          ```Title
-          TypeOrmModule.forRoot({
-            type: mysql,
-            host: localhost,
-            port: 3306,
-            username: root,
-            password: root,
-            database: test,
-            entities: [],
-            synchronize: true```
+      ```
+        imports: [
+              TypeOrmModule.forRoot({
+               type: mysql,
+               host: localhost,
+               port: 3306,
+               username: root,
+               password: root,
+               database: test,
+               entities: [],
+               synchronize: true})
+          ],
+      ```
 
 
 
    * crear archivo `.env` para variables de entorno global.
    * importar módulo para poder configurar las variables de manera global `$yarn add @nestjs/config`
+      ```
+        imports: [
+           ConfigModule.forRoot(),
+           ],
+      ```
     
     
     
