@@ -23,9 +23,12 @@
             password: root,
             database: test,
             entities: [],
-            synchronize: true
-          ```
-    * Instalar variables de entorno global
+            synchronize: true```
+
+
+
+   * crear archivo `.env` para variables de entorno global.
+   * importar módulo para poder configurar las variables de manera global `$yarn add @nestjs/config`
     
     
     
