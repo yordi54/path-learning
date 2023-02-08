@@ -15,7 +15,7 @@
    * instalar packages `$yarn add @nestjs/typeorm typeorm pg` ver [documentación](https://docs.nestjs.com/techniques/database#typeorm-integration)
    * usar el modulo de TypeORM en el modulo principal ej:
    
-   `
+   ` import { TypeOrmModule } from '@nestjs/typeorm';
    @Module({
       imports: [
         TypeOrmModule.forRoot({
