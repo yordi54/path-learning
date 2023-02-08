@@ -34,13 +34,47 @@
 
 
    * crear archivo `.env` para variables de entorno global.
+      ```
+        DB_USER = example
+        DB_PASSWORD = example
+        DB_HOST = localhost
+        DB_NAME = example
+        DB_PORT = 5432
+      ```
    * importar módulo para poder configurar las variables de manera global `$yarn add @nestjs/config`
       ```
         imports: [
            ConfigModule.forRoot(),
            ],
       ```
-    
+      
+   * crear una archivo entidad para el usuario con sus atributos 
+      ```
+        import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+        @Entity('usuarios')
+        export class Auth {
+            @PrimaryGeneratedColumn('uuid')
+            id: string;
+
+            @Column('text', { unique: true })
+            email: string;
+
+            @Column('text')
+            password: string;
+        }
+      ```
+   * instalar libreria externa para validaciones `$yarn add class-validator class-transformer` ver [documentación](https://docs.nestjs.com/techniques/validation)
+   * configuración para Global para Pipe de Validaciones
+      ```
+        app.useGlobalPipes( 
+          new ValidationPipe({
+          whitelist: true,
+          forbidNonWhitelisted: true,
+          })
+        );
+      ```
+
     
     
 
