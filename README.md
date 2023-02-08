@@ -65,14 +65,26 @@
         }
       ```
    * instalar libreria externa para validaciones `$yarn add class-validator class-transformer` ver [documentación](https://docs.nestjs.com/techniques/validation)
-   * configuración para Global para Pipe de Validaciones
+   * configuración para Global para Pipe de Validaciones en el archivo `main.ts`
       ```
-        app.useGlobalPipes( 
-          new ValidationPipe({
-          whitelist: true,
-          forbidNonWhitelisted: true,
-          })
-        );
+        import { ValidationPipe } from '@nestjs/common';
+        import { NestFactory } from '@nestjs/core';
+        import { AppModule } from './app.module';
+
+        async function bootstrap() {
+          const app = await NestFactory.create(AppModule);
+          app.useGlobalPipes(new ValidationPipe(
+            {
+              whitelist: true,
+              forbidNonWhitelisted: true,
+            }
+          ));
+          await app.listen(3000);
+        }
+        bootstrap();
+        
+        // whiteList: Remueve todo lo que no está incluído en los DTOs
+        // forbidNonWhiteListed: Retorna bad request si hay propiedades en el objeto no requeridas
       ```
 
     
