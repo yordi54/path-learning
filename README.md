@@ -86,6 +86,30 @@
         // whiteList: Remueve todo lo que no está incluído en los DTOs
         // forbidNonWhiteListed: Retorna bad request si hay propiedades en el objeto no requeridas
       ```
+     * Authentication
+      instalar paquetes `$yarn add @nestjs/passport passport`
+      `$yarn add @nestjs/jwt passport-jwt`
+      `$yarn add -D @types/passport-jwt`
+      
+      definir la strategy a jwt
+        ```
+          import { Module } from '@nestjs/common';
+          import { AuthService } from './auth.service';
+          import { AuthController } from './auth.controller';
+          import { TypeOrmModule } from '@nestjs/typeorm';
+          import { Auth } from './entities/auth.entity';
+          import { PassportModule } from '@nestjs/passport';
+          @Module({
+            imports: [
+              TypeOrmModule.forFeature([Auth]),
+              PassportModule.register({ defaultStrategy: 'jwt' })
+            ],
+            controllers: [AuthController],
+            providers: [AuthService]
+          })
+          export class AuthModule {}
+        ```
+      
 
     
     
